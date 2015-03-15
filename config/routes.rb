@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
-  root 'podcasts#index'
-  get 'results' => 'podcasts#results'
+  root 'podcasts#index' 
+  get 'results' => 'podcasts#results', as: :results
   get 'podcast/:id' => 'podcasts#show'
   get 'podcast/:podcast_id/episode/:episode_id' => 'podcasts#show'
   # The priority is based upon order of creation: first created -> highest priority.

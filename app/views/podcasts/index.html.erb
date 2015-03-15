@@ -34,7 +34,7 @@
     <h5>Or, find podcasts by common categories:</h5>
     <ul>
     <% @categories_array.each do |category| %>
-      <li><a href="/results?searchkeyword=<%= "#{category}" %>"><%= category %></a></li>
+      <li><%= link_to category, results_path(:searchkeyword => category) %></li>
     <% end %>
     </ul>
 </div>
