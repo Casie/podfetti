@@ -1,5 +1,9 @@
 require 'json'
 require 'open-uri'
+require_relative './podcast.rb'
+require_relative './topic.rb'
+require_relative './episode.rb'
+require_relative './podcasts_topic.rb'
 
 class Api
 
