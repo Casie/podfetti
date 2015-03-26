@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :podcasts, only: :show
   resources :episodes, only: :show
   resources :users
+  resources :comments	
   
   root 'search#index'
 end

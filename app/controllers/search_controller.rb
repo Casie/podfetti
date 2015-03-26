@@ -7,7 +7,7 @@ class SearchController < ApplicationController
 	end
 
 	def results
-		@keyword = params[:searchkeyword].downcase
+		@keyword = params[:searchkeyword]
 		if @keyword
 			@podcasts = Search.new(@keyword).podcasts
 	  else

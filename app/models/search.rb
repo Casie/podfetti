@@ -1,5 +1,5 @@
 class Search
-	attr_accessor :keyword
+	attr_accessor :keyword, :topic, :podcasts
 
 	def initialize(keyword)
 		@keyword = keyword
@@ -19,3 +19,5 @@ class Search
 		@topic = Topic.find_or_create_by(name: keyword)
 	end
 end
+
+
