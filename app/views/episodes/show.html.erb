@@ -23,8 +23,8 @@
 	<p>Date: <%= post.created_at %></p>
 	<p>Title: <%= post.title %></p>
   <p>Content: <%= post.content %></p>
-  <p>Author: <%= post.user.name %></p>
-  <a href="/posts/<%= post.id %>/edit">Edit</a>
+  <p>Author: <%= post.user.email %></p>
+  <!-- <a href="/posts/<%= post.id %>/edit">Edit</a> -->
 
 	<form action='/posts/<%= post.id %>/delete' method='post'>
 		<input class=delete-button type="submit" value="Delete"/>
