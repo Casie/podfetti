@@ -5,7 +5,7 @@
 <p><% @podcast.summary %></p>
 
 <% @podcast.episodes.each do |episode| %>
-	<li><a href="/podcasts/<%= episode.podcast_id %>/<%= episode.id %>"><%= episode.title %></a></li>
+	<li><%= link_to episode.title, [@podcast, episode] %></li>
 <% end %>
 
 <p>Add Your Voice:</p>
@@ -16,6 +16,7 @@
 	<%= f.label :content, "Comment" %>
 	<%= f.text_area :content %>
 	<%#= f.hidden_field :user_id, :value => current_user.id %>
+	<%= f.hidden_field :podcast_id, :value => @podcast.id %>
 	<%= f.submit %>
 <% end %>
 
