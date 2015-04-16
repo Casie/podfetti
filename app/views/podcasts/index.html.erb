@@ -2,7 +2,7 @@
   <div class="container-fluid">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1">
-        <span class="sr-only">BUTTON</span>
+        <span class="sr-only">Toggle navigation</span>
         <span class="icon-bar"></span>
       </button>
       <a class="navbar-brand">Podfetti</a>
@@ -17,6 +17,22 @@
           </form>      
       </ul>
     <div>
+
+      <% if !user_signed_in? %>
+        <ul class="nav navbar-nav navbar-right">
+           <%#= render 'login' %> <!-- tried to pull in the devise login partial here. didn't work because there are many methods passed into the devise new route. to be attempted another time. -->
+           <%= link_to "Sign In", new_user_session_path %>
+        </ul>
+
+      <% else %>
+
+        <ul class="nav navbar-nav navbar-right">
+          <!-- <p><%#= flash[:newuser] if current_user %></p>  this has to be added to the devise create route -->
+          <p class='test'>Hello, <%= current_user.email %>!
+          <p><%= link_to "Your Account", useraccount_path %> | <%= link_to "Log Out", destroy_user_session_path, :method => :delete %></p>
+        </ul>
+
+      <% end %>
 
     </div>
   </div>
@@ -38,6 +54,3 @@
     <% end %>
     </ul>
 </div>
-
-
-

@@ -2,7 +2,6 @@ Rails.application.routes.draw do
   devise_for :users
   resources :users
 
-  get 'search/index'
   get 'results' => 'search#results', as: :results
 
   resources :podcasts, only: :show do
@@ -17,7 +16,7 @@ Rails.application.routes.draw do
   get 'useraccount' => 'registrations#useraccount', as: :useraccount
   get 'newuser' => 'registrations#newuser', as: :newuserform
   
-  root 'search#index'
+  root 'podcasts#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
