@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150416191806) do
+ActiveRecord::Schema.define(version: 20150416202649) do
 
   create_table "episodes", force: :cascade do |t|
     t.string  "title"
@@ -33,11 +33,13 @@ ActiveRecord::Schema.define(version: 20150416191806) do
   end
 
   create_table "posts", force: :cascade do |t|
-    t.string  "title"
-    t.string  "content"
-    t.integer "user_id"
-    t.integer "podcast_id"
-    t.integer "episode_id"
+    t.string   "title"
+    t.string   "content"
+    t.integer  "user_id"
+    t.integer  "podcast_id"
+    t.integer  "episode_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "topics", force: :cascade do |t|
