@@ -6,8 +6,6 @@ class CreatePosts < ActiveRecord::Migration
       t.integer :user_id
       t.integer :podcast_id
       t.integer :episode_id
-      t.datetime :created_at
-      t.datetime :updated_at
     end
   end
 end
