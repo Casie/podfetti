@@ -20,15 +20,6 @@
 <p>Comments:</p>
 
 <% @episode.posts.each do |post| %>
-	<p>Date: <%= post.created_at %></p>
-	<p>Title: <%= post.title %></p>
-  <p>Content: <%= post.content %></p>
-  <p>Author: <%= post.user.email %></p>
-  <!-- <a href="/posts/<%= post.id %>/edit">Edit</a> -->
-
-	<form action='/posts/<%= post.id %>/delete' method='post'>
-		<input class=delete-button type="submit" value="Delete"/>
-	</form>
-
+	<%= render 'posts/comment', :post => post %>
 <% end %>
 

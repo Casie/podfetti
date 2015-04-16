@@ -23,12 +23,5 @@
 <p>Comments:</p>
 
 <% @podcast.posts.each do |post| %>
-	<p>Date: <%= post.created_at %></p>
-	<p>Title: <%= post.title %></p>
-  <p>Content: <%= post.content %></p>
-  <p>Author: <%= post.user.email %></p>
-  <!-- <a href="/posts/<%= post.id %>/edit">Edit</a> -->
-  
-	<%= link_to "Delete", post_path(post), :method => :delete, :class => "btn btn-default" %>
-
+	<%= render 'posts/comment', :post => post %>
 <% end %>

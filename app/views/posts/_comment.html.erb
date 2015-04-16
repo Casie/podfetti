@@ -1,0 +1,7 @@
+<p>Date: <%= post.created_at.strftime "%m/%d/%y at %l:%M %p" %></p>
+<p>Title: <%= post.title %></p>
+<p>Content: <%= post.content %></p>
+<p>Author: <%= post.user.email %></p>
+<!-- <a href="/posts/<%= post.id %>/edit">Edit</a> -->
+
+<%= link_to "Delete", post_path(post), :method => :delete, :class => "btn btn-default" %>
