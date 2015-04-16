@@ -25,10 +25,10 @@ class Api
     results = []
     @search_hash["podcasts"].each do |podcast|
       p = Podcast.find_or_create_by(title: podcast["title"], identifier: podcast["podcast_id"], image_url: podcast["image_url"], feed_url: podcast["feed_url"])
-      results << p
       episode_hash = JSON.load(open("https://feedwrangler.net/api/v2/podcasts/show?podcast_id=#{p.identifier}"))
       p.summary = episode_hash["podcast"]["summary"]
       p.save
+      results << p
       episode_hash["podcast"]["recent_episodes"].each do |episode|
         e = Episode.find_or_create_by(title: episode["title"], url: episode["audio_url"], podcast_id: p.id)
       end
@@ -39,8 +39,7 @@ class Api
         t = Topic.create(:name => @topic.capitalize)  
         PodcastsTopic.create(:podcast_id => p.id, :topic_id => t.id)
       end
-      results
     end
+    results
   end
 end
-
