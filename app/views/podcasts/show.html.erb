@@ -15,7 +15,7 @@
 	<%= f.text_field :title %>
 	<%= f.label :content, "Comment" %>
 	<%= f.text_area :content %>
-	<%#= f.hidden_field :user_id, :value => current_user.id %>
+	<%= f.hidden_field :user_id, :value => current_user.id %>
 	<%= f.hidden_field :podcast_id, :value => @podcast.id %>
 	<%= f.submit %>
 <% end %>
